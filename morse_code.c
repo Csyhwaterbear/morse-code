@@ -9,18 +9,21 @@ void DD(int j,int k)
 }
 char main()
 {	
-	char i=0, n=1, j, k, *str; 
-	str = (char*)malloc(sizeof(char));
-	while((str[i++] = getchar())!='\n')
+	char i, n, j, k, *str; 
+	for(;i = 0,n = 1;)
 	{
-		str = (char*)realloc(str,++n*sizeof(char));
-		str[i-1] -= 96 < str[i-1] && str[i-1] < 123 ? 32 : 0;
+		str = (char*)malloc(sizeof(char));
+		while((str[i++] = getchar())!='\n')
+		{
+			str = (char*)realloc(str,++n*sizeof(char));
+			str[i-1] -= 96 < str[i-1] && str[i-1] < 123 ? 32 : 0;
+		}
+		for(i = -1; i++ < n-1;)
+		{
+			for(j = -1; a[j] != str[i] && j++ < 62;);
+			for(k = 1; pow(2,k) <= j; j -= pow(2,k++));
+			k<6 ? DD(j,k) , printf("  ") : 0;
+		}
+		free(str);printf("%c",10);
 	}
-	for(i = -1; i++ < n-1;)
-	{
-		for(j = -1; a[j] != str[i] && j++ < 62;);
-		for(k = 1; pow(2,k) <= j; j -= pow(2,k++));
-		k<6 ? DD(j,k) , printf("  ") : 0;
-	}
-	free(str);
 }
